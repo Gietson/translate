@@ -1,0 +1,104 @@
+<div class="container">
+
+    <div class="col-md-push-6">
+        <div class="auth" dw-loading="translate" dw-loading-options="{text: ''}">
+            <legend>Tłumacz słowa oraz ucz się ich w memrise</legend>
+            <div class="panel-body">
+                <div></div>
+                <div>
+                    <button type="button" class="btn default btn-block btn-search" data-toggle="collapse"
+                            data-target="#search">
+                        <i class="fa fa-cog"> Ustawienia memrise </i>
+                        <span class="glyphicon glyphicon-menu-down"></span>
+                    </button>
+                </div>
+
+                <div class="collapse memriseAuth" id="search">
+                    <form class="form-horizontal" role="form" ng-submit="memriseAuth()">
+                        <div class="form-group">
+
+                            <label for="login" class="col-sm-3 control-label">Login:</label>
+
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="login"
+                                       placeholder="Twój login" ng-model="login"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-3 control-label">Hasło:</label>
+
+                            <div class="col-sm-6">
+                                <input type="password" class="form-control" id="password"
+                                       placeholder="Twoje hasło" ng-model="password"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="title" class="col-sm-3 control-label">Tytuł kursu:</label>
+
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="title"
+                                       placeholder="Twój tytuł kursu w memrise" ng-model="title"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn default">Zapisz</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+            <div>
+                <form class="form-horizontal" role="form" ng-submit="translate()">
+                    <div class="form-group">
+                        <label for="englishWord" class="col-sm-3 control-label">Angielskie słowo:</label>
+
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" id="englishWord"
+                                   placeholder="Wpisz słowo do tłumaczenia" ng-model="english"
+                                   ng-click="english = null" autocomplete="off"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn default">Szukaj tłumaczenia</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-if="data != null">
+                        <div class="col-sm-12">
+                            <div>
+                                <span>Wpisane słowo: <b>{{data.searchEnglishWord}}</b></span>
+                            </div>
+                            <div>
+                                <span>Wyszukane słowo: <b>{{data.englishWord}}</b></span>
+                            </div>
+                            <div>
+                                <span><h5>Polskie tłumaczenia: <b>{{data.polishWords}}</b></h5></span>
+                            </div>
+                            <div>
+                                <span><h5>Zdanie: <b>{{data.sentence}}</b></h5></span>
+                            </div>
+                            <div ng-if="data.image" class="details">
+                                <img src="{{data.image}}"/>
+                            </div>
+
+                            <div ng-if="data.sound" class="details">
+                                <audio controls autoplay>
+                                    <source src="{{data.sound | trustUrl}}">
+                                    Your browser does not support the audio element.
+                                </audio>
+                            </div>
+                            <pre> {{ data | json}} </pre>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

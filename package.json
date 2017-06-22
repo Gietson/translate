@@ -1,0 +1,36 @@
+{
+  "name": "t",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/app.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "casperjs": "*",
+    "cheerio": "^0.20.0",
+    "compression": "^1.6.2",
+    "connect-livereload": "^0.5.4",
+    "connect-mongo": "^1.2.1",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.4.2",
+    "errorhandler": "^1.4.3",
+    "express": "^4.14.0",
+    "express-session": "^1.13.0",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.5.2",
+    "morgan": "^1.7.0",
+    "phantomjs": "*",
+    "serve-favicon": "^2.3.0",
+    "socket.io": "^1.4.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node server/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://576b15082d5271022b0001ad@t-bolo997.rhcloud.com/~/git/t.git/"
+  },
+  "author": "",
+  "license": "ISC"
+}
