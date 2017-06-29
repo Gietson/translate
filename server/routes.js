@@ -5,7 +5,7 @@ var path = require('path');
 
 module.exports = function (app) {
     app.use('/api/translate', require('./api/translate'));
-
+	app.use('/api/diki', require('./api/diki'));
       
      // All undefined asset or api routes should return a 404
     app.route('/:url(api|auth|components|app|bower_components|assets)/*')

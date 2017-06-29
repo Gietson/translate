@@ -21,8 +21,9 @@ module.exports = {
     session: 'angular-fullstack-secret'
   },
   mongo: {
-        uri: 'mongodb://lolo267:lolo267@ds021994.mlab.com:21994/translate'
+        uri: 'mongodb://lolo267:lolo267@ds021994.mlab.com:21994/translate',
         //process.env.OPENSHIFT_MONGODB_DB_URL ||
+		options: 'useMongoClient: true'
     }
 
 };
